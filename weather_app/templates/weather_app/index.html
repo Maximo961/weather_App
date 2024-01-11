@@ -13,7 +13,7 @@
 
 <form method="post">
   {% csrf_token %}
-  <input type="text" name="city1" placeholder="Enter city 1">
+  <input type="text" name="city1" placeholder="Enter city">
   <!--<input type="text" name="city2" placeholder="Enter city 2"> -->
   <button type="submit">Get Weather</button>
 </form>
@@ -32,8 +32,9 @@
   {% endif %}
 </div>
 <video autoplay loop muted plays-inline class = "back-video">
-    <source src="video1.mp4" type="video\mp4">
+     <source src="{% static 'pexels_videos_3723 (1080p).mp4' %}" type="video/mp4">
     Cant play in browser
 </video>
+
 </body>
 </html>
