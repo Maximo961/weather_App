@@ -10,7 +10,9 @@
     {% for forecast in daily_forecasts %}
         <div class = "forecast">
         <h3>{{ forecast.day }}</h3>
-            <p>{{ forecast.min_temp }}°F-{{ forecast.max_temp}}°F</p>
+
+            <p> {{ forecast.min_temp }}°F-{{ forecast.max_temp}}°F </p>
+            <p>{{ forecast.current_temp }}°F</p>
         <p>{{ forecast.description }}</p>
         <img src ="http://openweathermap.org/img/w/{{ forecast.icon }}.png" alt ="{{ forecast.description }}">
         </div>

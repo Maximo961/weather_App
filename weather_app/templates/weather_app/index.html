@@ -13,28 +13,29 @@
 
 <form method="post">
   {% csrf_token %}
-  <input type="text" name="city1" placeholder="Enter city">
+  <input type="text" name="city1" placeholder="City">
   <!--<input type="text" name="city2" placeholder="Enter city 2"> -->
   <button type="submit">Get Weather</button>
+
 </form>
 
 <div class="comparison-container">
+{% if error_message %}
+    <p>{{ error_message }}</p>
+{% endif %}
 
   {% if weather_data1 %}
     <div class="city-container">
       {% include 'weather_app/city_weather_html.html' with weather_data=weather_data1 daily_forecasts=daily_forecasts1 %}
     </div>
   {% endif %}
-  {% if weather_data2 %}
-    <div class="city-container">
-      {% include 'weather_app/city_weather_html.html' with weather_data=weather_data2 daily_forecasts=daily_forecasts2 %}
-    </div>
-  {% endif %}
+
 </div>
 <video autoplay loop muted plays-inline class = "back-video">
      <source src="{% static 'pexels_videos_3723 (1080p).mp4' %}" type="video/mp4">
     Cant play in browser
 </video>
+
 
 </body>
 </html>
